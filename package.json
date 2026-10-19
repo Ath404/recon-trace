@@ -1,0 +1,41 @@
+{
+  "name": "recon-trace",
+  "version": "0.1.0",
+  "description": "Deterministic bank-statement vs Tally reconciliation where every answer points back to its source line, ambiguity is held instead of guessed, and the totals tie out",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "recon-trace": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "vitest run",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "example": "tsx scripts/make-example.ts",
+    "demo": "tsx src/cli.ts --bank examples/hdfc-escrow.csv --tally examples/tally-daybook.xml --ledger \"HDFC RERA Escrow A/c\" --direction in"
+  },
+  "keywords": [
+    "reconciliation",
+    "tally",
+    "bank-statement",
+    "accounting",
+    "india",
+    "fintech"
+  ],
+  "author": "Atharv Chauhan <atharvskeletons@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "fast-xml-parser": "^5.11.2"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vitest": "^5.0.5"
+  }
+}
